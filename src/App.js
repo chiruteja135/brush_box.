@@ -1,9 +1,24 @@
-import React from "react";
-import "./App.css";
 
-import Services from "./Services";
-import Pricing from "./Pricing";
-import Contact from "./Contact";
+
+
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import Services from './Services';
+import Pricing from './Pricing';
+import Contact from './Contact';
+
+function Home() {
+  return (
+    <section className="App-section">
+      <h2>Welcome to our Laundry Service!</h2>
+      <p>
+        Comprehensive laundry services offering a one-stop solution for
+        washing, steam ironing, and dry cleaning needs.
+      </p>
+    </section>
+  );
+}
 
 function App() {
   return (
@@ -14,25 +29,31 @@ function App() {
       </header>
 
       <nav>
-        <a href="/Home">Home</a>
-        <a href="/Services">Services</a>
-        <a href="/Pricing">Pricing</a>
-        <a href="/Contact">Contact</a>
+        <Link to="/">Home</Link>
+        <Link to="/Services">Services</Link>
+        <Link to="/Pricing">Pricing</Link>
+        <Link to="/Contact">Contact</Link>
       </nav>
 
-      <section className="App-section">
-        <h2>Welcome to our Laundry Service!</h2>
-        <p>
-          Comprehensive laundry services offering a one-stop solution for
-          washing, steam ironing, and dry cleaning needs.
-        </p>
-      </section>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/Pricing" element={<Pricing />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
 
       <footer className="App-footer">
-        <p>&copy; 2023 Brush & Box </p>
+        <p>&copy; 2024 Brush & Box </p>
       </footer>
     </div>
   );
 }
 
-export default App;
+const WrappedApp = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+export default WrappedApp;
+
