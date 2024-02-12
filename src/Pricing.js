@@ -3,44 +3,44 @@ import React from 'react';
 const items = [
   {
     name: "Shirt",
-    wash: 5,
-    iron: 3,
-    fold: 2,
+    wash: 40,
+    iron: 12,
+    fold: 10,
     wash_and_fold: 15,
   },
   {
     name: "Pant",
-    wash: 7,
-    iron: 4,
-    fold: 2,
-    wash_and_fold: 15,
-  },
-  {
-    name: "Blouse",
-    wash: 7,
-    iron: 4,
-    fold: 2,
-    wash_and_fold: 15,
-  },
-  {
-    name: "Saree",
-    wash: 7,
-    iron: 4,
-    fold: 2,
-    wash_and_fold: 15,
-  },
-  {
-    name: "Salwar",
-    wash: 7,
-    iron: 4,
-    fold: 2,
+    wash: 40,
+    iron: 12,
+    fold: 10,
     wash_and_fold: 15,
   },
   {
     name: "Suit",
-    wash: 52,
-    iron: 4,
-    fold: 2,
+    wash: 250,
+    iron: 80,
+    fold: 15,
+    wash_and_fold: 15,
+  },
+  {
+    name: "Saree(silk)",
+    wash: 350,
+    iron: 70,
+    fold: 20,
+    wash_and_fold: 15,
+  },
+  {
+    name: "Saree(border)",
+    wash: 350,
+    iron: 60,
+    fold: 20,
+    wash_and_fold: 15,
+  },
+  {
+    name: "Saree(normal)",
+    wash: 350,
+    iron: 40,
+    fold: 20,
     wash_and_fold: 15,
   },
   // ... other clothing items
@@ -54,8 +54,7 @@ const services = {
 };
 
 const Pricing = () => {
-  console.log("Initial `items` array:");
-  console.log(items); // Log the entire array
+ 
 
   return (
     <div className="pricing-container">

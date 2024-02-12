@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import ContactCard from "./ContactCard";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -6,17 +7,17 @@ import {
   FaInstagram,
   FaFacebook,
   FaLinkedin,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 function Contact() {
   const contactInfo = {
     address: {
-      street: "123 Main Street",
-      city: "Anytown",
-      state: "CA",
-      zip: "12345",
+      street: "Kodathi gate, opposite Narayna reddy building",
+      city: "Banglore",
+      state: "Karnataka",
+      zip: "560035",
     },
-    phone: "(555) 555-5555",
+    phone: "+91 9739151421",
     email: "info@yourwebsite.com",
     socialMedia: {
       instagram: "https://www.instagram.com/yourhandle",
@@ -34,7 +35,14 @@ function Contact() {
           <h3>Address</h3>
           <p>
             <FaMapMarkerAlt /> {/* Address icon */}
-            {contactInfo.address.street}, {contactInfo.address.city}, {contactInfo.address.state} {contactInfo.address.zip}
+            <a
+              href="https://www.google.com/maps/place/Brush+and+box/@12.8973824,77.7180628,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1365b54036ff:0x9b3279699515811e!8m2!3d12.8973772!4d77.7206431!16s%2Fg%2F11vm1m_8lp?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {contactInfo.address.street}, {contactInfo.address.city},{" "}
+              {contactInfo.address.state} {contactInfo.address.zip}
+            </a>
           </p>
         </div>
 
@@ -58,22 +66,37 @@ function Contact() {
           <h3>Social Media</h3>
           <ul>
             <li>
-              <a href={contactInfo.socialMedia.instagram} target="_blank" rel="noopener noreferrer">
+              <a
+                href={contactInfo.socialMedia.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaInstagram /> {/* Instagram */}
               </a>
             </li>
             <li>
-              <a href={contactInfo.socialMedia.facebook} target="_blank" rel="noopener noreferrer">
+              <a
+                href={contactInfo.socialMedia.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaFacebook /> {/* Facebook */}
               </a>
             </li>
             <li>
-              <a href={contactInfo.socialMedia.linkedin} target="_blank" rel="noopener noreferrer">
+              <a
+                href={contactInfo.socialMedia.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedin /> {/* LinkedIn */}
               </a>
             </li>
           </ul>
         </div>
+      </div>
+      <div className="cc">
+        <ContactCard />
       </div>
     </div>
   );
