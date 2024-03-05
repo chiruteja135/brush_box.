@@ -18,7 +18,7 @@ function Contact() {
       zip: "560035",
     },
     phone: "+91 9739151421",
-    email: "info@yourwebsite.com",
+    email: "brushnbox@gmail.com",
     socialMedia: {
       instagram: "https://www.instagram.com/yourhandle",
       facebook: "https://www.facebook.com/yourpage",
@@ -32,7 +32,7 @@ function Contact() {
         <h2>Contact Us</h2>
 
         <div>
-          <h3>Address</h3>
+          {/* <h3>Address</h3> */}
           <p>
             <FaMapMarkerAlt /> {/* Address icon */}
             <a
@@ -47,7 +47,7 @@ function Contact() {
         </div>
 
         <div>
-          <h3>Phone</h3>
+          {/* <h3>Phone</h3> */}
           <p>
             <FaPhoneAlt /> {/* Phone icon */}
             {contactInfo.phone}
@@ -55,7 +55,7 @@ function Contact() {
         </div>
 
         <div>
-          <h3>Email</h3>
+          {/* <h3>Email</h3> */}
           <p>
             <FaEnvelope /> {/* Email icon */}
             <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
@@ -63,7 +63,7 @@ function Contact() {
         </div>
 
         <div>
-          <h3>Social Media</h3>
+          {/* <h3>Social Media</h3> */}
           <ul>
             <li>
               <a

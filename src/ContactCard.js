@@ -1,68 +1,49 @@
-import React, { useState } from 'react';
+import React from "react";
+export default function Contact() {
+  const [result, setResult] = React.useState("");
 
-const ContactForm = () => {
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [submitting, setSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const handleSubmit = async (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
-    setSubmitting(true);
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ phone, message }),
-      });
+    formData.append("access_key", "495ddc4b-b4c7-40c8-b28b-b409a258f4ad");
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form data.');
-      }
 
-      setSuccessMessage('Form submitted successfully!');
-      setPhone('');
-      setMessage('');
-    } catch (error) {
-      setErrorMessage('An error occurred while submitting the form.');
-    } finally {
-      setSubmitting(false);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
     }
   };
 
   return (
-    <div className="contact-form">
-      <h2>Contact Form</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="phone">Phone Number:</label>
-        <input
-          type="tel"
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="Enter your phone number"
-          required
-        />
+    <div className="contact-form-container">
+      <form className="contact-form" onSubmit={onSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label htmlFor="Phone">Phone:</label>
+        <input type="phone" id="phone" name="phone" required />
+
         <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Enter your message"
-          required
-        />
-        <button type="submit" disabled={submitting}>
-          {submitting ? 'Submitting...' : 'Submit'}
-        </button>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit Form</button>
       </form>
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      <span>{result}</span>
     </div>
   );
-};
-
-export default ContactForm;
+}
