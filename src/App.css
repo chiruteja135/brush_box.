@@ -14,9 +14,10 @@ body {
 
 header {
   background-color: #1a237e; /* dark blue header */
-  padding: 15px;
+  /* padding: 5px; */
   text-align: center;
   color: #fff;
+  height: 100px;
   
 }
 
@@ -24,7 +25,7 @@ nav {
   display: flex;
   justify-content: center;
   background-color: #3f51b5; /* medium blue navbar */
-  padding: 10px;
+  /* padding: 5px; */
 
 }
 
@@ -44,7 +45,7 @@ footer {
   background-color: #1a237e; /* dark blue footer */
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -98,28 +99,22 @@ section {
   display: flex;
   justify-content: space-around;
   padding-top: 2px;
-  /* font-size: large;
-  font-weight: bold; */
+  
 
 }
 .contact-details {
   font-size:large;
-  font-weight: bolder;
+  font-weight: bold;
   width: 55%; /* Desired width for contact information */
-  padding: 12px;
+  /* padding: 5px; */
   border-radius: 3px; /* Optional rounded corners */
-}
-
-.contact-details h2 {
-  /* font-size: 20px; */
-  margin-bottom: 5px;
 }
 
 
 .contact-details p {
   margin-bottom: 2px;
-  line-height: 1.5;
-  font-size: x-large;
+  line-height: 1.0;
+  font-size: larger;
   font-weight: bold;
 
 }
@@ -143,8 +138,8 @@ section {
 
 /* Optional icon styling */
 .contact-details li a svg {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 5px;
   fill: #333;
   margin-top: 10px;
@@ -184,12 +179,12 @@ th {
 .contact-form-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2px;
   background-color: transparent;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .contact-form {
@@ -202,21 +197,21 @@ th {
 } */
 
 .contact-form h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.0rem;
+  margin-bottom: 10px;
 }
 
 .contact-form label {
   display: block;
   margin-bottom: 8px;
-  font-size: larger;
+  font-size: large;
   font-weight: 500;
 }
 
 .contact-form input[type="text"],.contact-form input[type="email"],.contact-form input[type="phone"]{
   width: 100%;
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 3px;
+  margin-bottom: 3px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: medium;
@@ -224,11 +219,11 @@ th {
 }
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: larger;
+  font-size: large;
   font-weight: bold;
 
 }
